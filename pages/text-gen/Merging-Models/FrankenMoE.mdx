@@ -1,0 +1,87 @@
+# FrankenMoE: MoE, With Random Routing
+
+Mergekit had an update awhile ago, that makes it capable of creating Sparse Mixture of Experts models. In a Sparse Mixture of Experts, you call upon different models throughout a singular output to average the best question between them.
+
+So, the model looks a lot larger, but really you're not inferencing with that much, normally it's an 8x7B, so you're only ever using 2 7B models at once. [It's easier if you read about it here](https://huggingface.co/blog/moe), as it's a pretty complex thing to explain.
+
+I call this a frankenMoE because in [my merges](https://huggingface.co/Kquant03/Buttercup-4x7B-GGUF) the router is not trained with the experts like in a proprietary model. I will keep this page updated, in case there's a method found to fix this.
+
+For these models, you want to prompt for what you want each model to be responsible for within the resulting MoE, like so:
+
+`base_model: mlabonne/Beagle14-7B
+gate_mode: hidden
+dtype: bfloat16
+experts:
+  - source_model: fblgit/una-cybertron-7b-v3-OMA
+    positive_prompts:
+    - "Fantasy"
+    - "Exciting"
+    - "Interesting"
+    - "Setting"
+    - "Landscape"
+    - "Fantastic"
+    - "Magical"
+    - "Storywriting"
+    - "Roleplay"
+    - "Fictional"
+    negative_prompts:
+    - "Realistic"
+    - "Nonfiction"
+    - "Historical"
+    - "Fact"
+    - "Factual"
+  - source_model: rwitz/go-bruins-v2
+    positive_prompts:
+    - "Cock"
+    - "mouth"
+    - "lips"
+    - "softly"
+    - "orgasm"
+    - "cum"
+    - "anal"
+    - "gently"
+    - "intimate"
+    - "pussy"
+    - "closer"
+    negative_prompts:
+    - "reserved"
+    - "SFW"
+    - "Professional"
+    - "vague"
+    - "off-putting"
+    - "SFW"
+    - "appropriate"
+  - source_model: mlabonne/Beagle14-7B
+    positive_prompts:
+    - "Discuss"
+    - "Chat"
+    - "engaging"
+    - "stimulating"
+    - "intense"
+    - "information"
+    negative_prompts:
+    - "Sorry"
+    - "As an AI"
+    - "I cannot"
+    - "I am not capable"
+    - "this request"
+  - source_model: mlabonne/Beagle14-7B
+    positive_prompts:
+    - "accurate"
+    - "logical"
+    - "helpful"
+    - "descriptive"
+    - "intelligent"
+    - "precise"
+    - "answer"
+    - "science"
+    - "math"
+    - "calculate"
+    - "compute"
+    - "solve"
+    negative_prompts:
+    - "unhelpful"
+    - "inaccurate"
+    - "vague"
+    - "nondescript"
+    - "improper"`
