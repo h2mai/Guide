@@ -1,6 +1,6 @@
 ### Powered by H2M.
 
-![OIG](https://github.com/Kquant03/Guide/assets/155934148/6f179da0-c74b-433b-a0bd-c6c669e9deb1)
+![OIG](https://github.com/Kquant03/Guide/assets/155934148/6d46a9d3-aff4-4ba6-9bd2-21c57a5d5a95)
 
 # Welcome to Convex.
 
