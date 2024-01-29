@@ -1,0 +1,23 @@
+# Parameters: A Huge Confusing List of Settings
+
+With Oobabooga, you are given a parameters tab. In the parameters tab, there is another big page of tabs to be scrolled through. The main one we will focus on here is the Generation tab.
+
+In the Generation tab, there are numerous sliders, boxes, and different settings to tweak. If you wish to just read about Oobabooga parameters as they were written...[access this page, and read about them, here.](https://github.com/oobabooga/text-generation-webui/wiki/03-%E2%80%90-Parameters-Tab)
+
+Kalomaze has also written up an article/guide to the parameter "min-p" which he designed himself. I think it would be most appropriate to let him tell you about that [here on the github page he made, for it](https://github.com/huggingface/transformers/issues/27670)
+
+Mainly, I just use the parameter preset "simple-1" when I am testing models and comparing, but I would like to offer some key things to consider, as well as [a link to a list of parameters and what they do](https://github.com/oobabooga/text-generation-webui/wiki/03-%E2%80%90-Parameters-Tab)
+
+Temperature: I set this ~1 in order to test how the model performs when not affected by parameter adjustments.
+
+Top P: At default, this will be set to about 0.9 in oobabooga. When Top-P is not set to a value of 1, you are essentially distorting the output of the model. At a value of 1, and with added other settings we'll go over, you will get undistorted outputs.
+
+It's good to note that some models might do better if you distort the outputs, so feel free to test and learn what works best for your use-case.
+
+top_k: I keep a low top_k as well, I find that values anywhere from 20-40 should produce coherent outputs. For storywriting I actually can set mine as high as 128 on some models.
+
+repetition_pentalty : Setting this too high will cause the model to make more mistakes than it is worth, so I either turn it all the way down to 1 or leave it at the default 1.15
+
+I really don't touch any other settings on my end, as this allows for me to ask the model questions, and have it write articles, for me.
+
+I hope this short guide, and the included links helped you learn more about parameters in oobabooga!
