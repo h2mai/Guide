@@ -2,7 +2,7 @@
 
 # A Guide on Everything LLm
 
-## Fine-tuning, inferencing, extensions, from-scratch training, everything can be found on [our guide!(https://www.h2mai.com/)
+## Fine-tuning, inferencing, extensions, from-scratch training, everything can be found on [our guide!](https://www.h2mai.com/)
 
 In this guide, every fundamental basic will be touched upon, and you will be provided ample resources in order to start your journey down the path of LLms.
 
