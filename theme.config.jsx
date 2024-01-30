@@ -1,5 +1,12 @@
+import Image from 'next/image'
+
 export default {
-    logo: <span>human2machine: Guide to AI</span>,
+    logo: (
+    <>
+    <Image src="/LOGO.png" alt="h2mai.com LOGO" width={48} height={48} />
+    <span>Gudide: AI Technicians</span>
+    </>
+    ),
     project: {
       link: 'https://h2mai.com'
     },
