@@ -4,7 +4,7 @@ The passthrough method differs significantly from the previous ones. By concaten
 
 A typical script looks like so:
 
-`slices:
+```slices:
   - sources:
     - model: OpenPipe/mistral-ft-optimized-1218
       layer_range: [0, 32]
@@ -12,4 +12,4 @@ A typical script looks like so:
     - model: mlabonne/NeuralHermes-2.5-Mistral-7B
       layer_range: [24, 32]
 merge_method: passthrough
-dtype: bfloat16`
+dtype: bfloat16```
